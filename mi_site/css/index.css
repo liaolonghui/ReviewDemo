@@ -10,6 +10,7 @@ ul,ol {
   list-style: none;
 }
 input {
+  border: none;
   outline: none;
 }
 a {
@@ -63,5 +64,95 @@ a {
 }
 /* 小米顶部end */
 /* 小米导航栏start */
+.header {
+  height: 100px;
+}
+.header .site_logo {
+  float: left;
+  width: 62px;
+  margin-top: 22px;
+}
+.header .site_logo a {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+.header .site_logo img {
+  width: 56px;
+  height: 56px;
+  background-color: #ff7e00;
+}
+.header .site_list {
+  float: left;
+  width: 850px;
+}
+.header .site_list ul {
+  width: 820px;
+  height: 88px;
+  padding: 12px 0 0 30px;
+  font-size: 16px;
+}
+.header .site_list ul li {
+  float: left;
+}
+.header .site_list ul li a {
+  display: block;
+  padding: 26px 10px 38px;
+  color: #333;
+}
+.header .site_list ul li a:hover {
+  color: #ff6700;
+}
+.header .site_list ul li.site_category a {
+  padding: 0;
+  margin-right: 95px;
+}
+.header .site_search {
+  float: right;
+  width: 296px;
+  margin-top: 25px;
+}
+.header .site_search form {
+  position: relative;
+  width: 296px;
+  height: 50px;
+}
+.header .site_search form .search_text {
+  width: 223px;
+  height: 48px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  padding: 0 10px;
+  float: left;
+}
+.header .site_search form .search_btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  float: left;
+  margin-left: -1px;
+}
+.header .site_search form .search_word {
+  position: absolute;
+  font-size: 12px;
+  top: 14px;
+  right: 65px;
+}
+.header .site_search form .search_word a {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0 5px;
+  background-color: #eee;
+  color: #7575575;
+}
+.header .site_search form .search_word a:hover {
+  background-color: #ff6700;
+  color: #fff;
+}
+
+
+
+
 
 /* 小米导航栏end */
