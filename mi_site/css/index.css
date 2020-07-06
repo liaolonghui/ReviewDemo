@@ -201,6 +201,7 @@ a {
 .site_content .site_slider>a {
   display: block;
   width: 1226px;
+  height: 460px;
   position: absolute;
   top: 0;
   left: 0;
@@ -250,4 +251,71 @@ a {
   border: 2px solid #fff;
   border-color: rgba(255, 255, 255, .3);
 }
+/* 小米向导样式start */
+.content_sub {
+  margin-top: 18px;
+  overflow: hidden;
+}
+.content_sub .content_channel {
+  float: left;
+  width: 234px;
+}
+.content_sub .content_channel>ul {
+  background: #5f5750;
+  font-size: 12px;
+  text-align: center;
+}
+.content_sub .content_channel>ul>li {
+  float: left;
+  width: 33.33%;
+  height: 85px;
+}
+.content_sub .content_channel>ul>li>a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 18px;
+}
+.content_sub .content_channel>ul>li i {
+  display: block;
+  font-size: 25px;
+}
+.content_sub .content_list {
+  float: left;
+  width: 992px;
+}
+.content_sub .content_list ul {
+  width: 100%;
+}
+.content_sub .content_list ul li {
+  float: left;
+  width: 33.33%;
+  text-align: right;
+}
+.content_sub .content_list ul li a {
+  display: block;
+  height: 170px;
+}
+.content_sub .content_list ul li a img {
+  width: 316px;
+  height: 170px;
+}
+/* 小米向导样式end */
+.content_banner {
+  margin-top: 18px;
+}
+.content_banner a {
+  display: block;
+  width: 1226px;
+  height: 120px;
+}
+.content_banner a img {
+  width: 1226px;
+  height: 120px;
+}
 /* 小米站点内容end */
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
