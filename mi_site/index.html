@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>小米商城</title>
+    <link rel="shortcut icon" href="./images/icon.png">
     <link rel="stylesheet" href="./css/index.css">
   </head>
   <body>
@@ -53,10 +54,77 @@
         </div>
         <div class="site_list">
           <ul class="clearfix">
+            <!-- category -->
             <li class="site_category">
               <a href="#">
                 <img src="./images/mifen.gif" alt="category" width="88" height="66">
               </a>
+              <!-- category_list分类列表 是侧边栏 -->
+              <div class="category_list">
+                <ul>
+                  <li>
+                    <a href="#">
+                      手机 电话卡
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      电视 盒子
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      电源 配件
+                      <span>></span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      笔记本 平板
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      家电 插线板
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      出行 穿戴
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      智能 路由器
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      健康 儿童
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      耳机 音箱
+                      <span>></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      生活 箱包
+                      <span>></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <a href="#">小米手机</a>
@@ -99,7 +167,29 @@
     <!-- 主页内容 -->
     <div class="site_content">
       <div class="container">
-
+        <!-- 轮播图 -->
+        <div class="site_slider">
+          <a href="#" class="ad_item">
+            <img src="./images/1.webp" alt="ad1">
+          </a>
+          <a href="#" class="ad_item">
+            <img src="./images/2.webp" alt="ad2">
+          </a>
+          <a href="#" class="ad_item">
+            <img src="./images/3.webp" alt="ad3">
+          </a>
+          <a href="#" class="ad_item">
+            <img src="./images/4.webp" alt="ad4">
+          </a>
+          <span class="next" id="next"></span>
+          <span class="prev" id="prev"></span>
+          <div class="slider_item">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- 内容详情 -->
@@ -114,5 +204,7 @@
 
       </div>
     </div>
+    <script src="./js/LLH-Animation.js" charset="utf-8"></script>
+    <script src="./js/index.js" charset="utf-8"></script>
   </body>
 </html>
