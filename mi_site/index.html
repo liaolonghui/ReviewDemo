@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
+    <style media="screen">
+      /* 一些轮播图默认样式（懒得写外面了） */
+      .ad_item {
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+      .current {
+        opacity: 1;
+        filter: alpha(opacity=100);
+      }
+      .slider_item a.index_current {
+        border-color: #ff6700;
+      }
+    </style>
   </head>
   <body>
     <!-- 顶部栏 -->
@@ -171,8 +185,8 @@
     <div class="site_content">
       <div class="container">
         <!-- 轮播图 -->
-        <div class="site_slider">
-          <a href="#" class="ad_item">
+        <div class="site_slider" id="site_slider">
+          <a href="#" class="ad_item current">
             <img src="./images/1.webp" alt="ad1">
           </a>
           <a href="#" class="ad_item">
@@ -186,8 +200,8 @@
           </a>
           <span class="next" id="next"></span>
           <span class="prev" id="prev"></span>
-          <div class="slider_item">
-            <a href="javascript:;"></a>
+          <div class="slider_item" id="mask">
+            <a href="javascript:;" class="index_current"></a>
             <a href="javascript:;"></a>
             <a href="javascript:;"></a>
             <a href="javascript:;"></a>
