@@ -12,6 +12,7 @@ window.onload = function(){
     startAnimation(items[index], {
       'opacity': 0
     });
+    item_index[index].style.zIndex = 0;
     item_index[index].style.borderColor = 'rgba(255, 255, 255, .3)';
     index--;
     if(index === -1){
@@ -20,12 +21,14 @@ window.onload = function(){
     startAnimation(items[index],{
       'opacity': 100
     });
+    item_index[index].style.zIndex = 1;
     item_index[index].style.borderColor = '#ff6700';
   }
   next.onclick = function(){
     startAnimation(items[index], {
       'opacity': 0
     });
+    item_index[index].style.zIndex = 0;
     item_index[index].style.borderColor = 'rgba(255, 255, 255, .3)';
     index++;
     if(index === 4){
@@ -34,6 +37,7 @@ window.onload = function(){
     startAnimation(items[index],{
       'opacity': 100
     });
+    item_index[index].style.zIndex = 1;
     item_index[index].style.borderColor = '#ff6700';
   }
 
@@ -43,6 +47,7 @@ window.onload = function(){
     startAnimation(items[index],{
       'opacity': 0
     });
+    item_index[index].style.zIndex = 0;
     item_index[index].style.borderColor = 'rgb(255,255,255,0.3)';
     index++;
     if(index === 4){
@@ -51,6 +56,7 @@ window.onload = function(){
     startAnimation(items[index],{
       'opacity': 100
     });
+    item_index[index].style.zIndex = 1;
     item_index[index].style.borderColor = '#ff6700';
   }
   slider.onmouseover = function(){
