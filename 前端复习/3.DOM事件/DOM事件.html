@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="box" id="box">
+      <h3>dom事件级别</h3>
+      <p>dom0级，dom2级(dom3级)，非要加上IE的话还有一个ie的事件绑定方法attachEvent()</p>
+      <h3>事件模型</h3>
+      <p>事件捕获和事件冒泡</p>
+      <h3>事件流</h3>
+      <p>事件捕获阶段->目标阶段->事件冒泡阶段</p>
+      <p>window->document->html->body->......->目标元素->......->body->html->document->window</p>
+
+      <button type="button" id="btn">点我试试看（看一下事件流）</button>
+      <script type="text/javascript">
+        let box = document.getElementById('box');
+        let btn = document.getElementById('btn');
+
+        window.addEventListener('click',function(){
+          console.log('captrue window')
+        },true);
+        document.addEventListener('click',function(){
+          console.log('captrue document')
+        },true);
+        document.documentElement.addEventListener('click',function(){
+          console.log('captrue html')
+        },true);
+        document.body.addEventListener('click',function(){
+          console.log('captrue body')
+        },true);
+        box.addEventListener('click',function(){
+          console.log('captrue box')
+        },true);
+
+        btn.addEventListener('click',function(){
+          console.log('目标阶段 btn')
+        },true);
+        btn.addEventListener('click',function(){
+          console.log('目标阶段 btn')
+        },false);
+
+        window.addEventListener('click',function(){
+          console.log('bubble window')
+        },false);
+        document.addEventListener('click',function(){
+          console.log('bubble document')
+        },false);
+        document.documentElement.addEventListener('click',function(){
+          console.log('bubble html')
+        },false);
+        document.body.addEventListener('click',function(){
+          console.log('bubble body')
+        },false);
+        box.addEventListener('click',function(){
+          console.log('bubble box')
+        },false);
+      </script>
+    </div>
+
+    <hr>
+    <div class="box2">
+      <h3>event对象</h3>
+      <p>ie8用window.event获取该对象</p>
+      <p>阻止默认事件event.preventDefault() （ie8用event.returnValue=false）</p>
+      <p>阻止冒泡event.stopPropagation() （ie8用event.cancelBubble=true）</p>
+      <p>阻止默认事件并且阻止之后的同事件的执行event.stopImmediatePropagation()</p>
+      <p>event.currentTarget</p>
+      <p>event.target(ie8用event.srcElement)</p>
+    </div>
+  </body>
+</html>

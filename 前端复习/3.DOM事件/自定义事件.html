@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" id="button">自定义事件</button>
+    <script type="text/javascript">
+      let btn = document.getElementById('button');
+
+      let eve = new Event('custome');
+      btn.addEventListener('custome',function(){
+        alert('自定义事件');
+      });
+      btn.dispatchEvent('eve'); //触发eve对象
+    </script>
+  </body>
+</html>
