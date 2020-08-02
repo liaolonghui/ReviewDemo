@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .layout{
+        margin-top: 100px;
+      }
+      .layout.float{
+        margin: 0;
+      }
+      .layout > article > div{
+        min-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1.浮动解决 -->
+    <section class="layout float">
+      <article class="left-center-right">
+        <style media="screen">
+          .layout.float > .left-center-right > .left{
+            float: left;
+            width: 200px;
+            background-color: red;
+          }
+          .layout.float > .left-center-right > .center{
+            background-color: green;
+          }
+          .layout.float > .left-center-right > .right{
+            float: right;
+            width: 200px;
+            background-color: blue;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center">
+          <h2>float实现三栏布局</h2>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>此时没有清除浮动，所以有环绕效果</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2.绝对定位 -->
+    <section class="layout absolute">
+      <article class="left-center-right">
+        <style media="screen">
+          .layout.absolute > .left-center-right{
+            position: relative;
+          }
+          .layout.absolute > .left-center-right > div{
+            position: absolute;
+          }
+          .layout.absolute > .left-center-right > .left{
+            left: 0;
+            width: 200px;
+            background-color: red;
+          }
+          .layout.absolute > .left-center-right > .center{
+            left: 200px;
+            right: 200px;
+            background-color: green;
+          }
+          .layout.absolute > .left-center-right > .right{
+            right: 0;
+            width: 200px;
+            background-color: blue;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>absolute实现三栏布局</h2>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+    <!-- 3.flexbox布局 -->
+    <section class="layout flex" style="margin-top:300px;">
+      <article class="left-center-right">
+        <style media="screen">
+          .layout.flex > .left-center-right{
+            display: flex;
+          }
+          .layout.flex > .left-center-right > .left{
+            width: 200px;
+            background-color: red;
+          }
+          .layout.flex > .left-center-right > .center{
+            flex: 1;
+            background-color: green;
+          }
+          .layout.flex > .left-center-right > .right{
+            width: 200px;
+            background-color: blue;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>flex实现三栏布局</h2>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+    <!-- 4.table布局 -->
+    <section class="layout table">
+      <article class="left-center-right">
+        <style media="screen">
+          .layout.table > .left-center-right{
+            display: table;
+            width: 100%;
+          }
+          .layout.table > .left-center-right > div{
+            display: table-cell;
+          }
+          .layout.table > .left-center-right > .left{
+            width: 200px;
+            background-color: red;
+          }
+          .layout.table > .left-center-right > .center{
+            background-color: green;
+          }
+          .layout.table > .left-center-right > .right{
+            width: 200px;
+            background-color: blue;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>table实现三栏布局</h2>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+    <!-- 5.grid布局 -->
+    <section class="layout grid">
+      <article class="left-center-right">
+        <style media="screen">
+          .layout.grid > .left-center-right{
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: 200px auto 200px;
+          }
+          .layout.grid > .left-center-right > .left{
+            background-color: red;
+          }
+          .layout.grid > .left-center-right > .center{
+            background-color: green;
+          }
+          .layout.grid > .left-center-right > .right{
+            background-color: blue;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>grid实现三栏布局</h2>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+  </body>
+</html>

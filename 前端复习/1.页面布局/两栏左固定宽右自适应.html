@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .layout{
+        margin-top: 100px;
+      }
+      .layout:nth-of-type(1){
+        margin-top: 0;
+      }
+      .layout > article > div{
+        min-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1.float -->
+    <section class="layout float">
+      <article class="left-right">
+        <style media="screen">
+          .layout.float > article > .left{
+            float: left;
+            width: 200px;
+            background-color: red;
+          }
+          .layout.float > article > .right{
+            background-color: green;
+            /*触发BFC*/
+            overflow: hidden;
+          }
+        </style>
+        <div class="left">
+          <h3>导航条</h3>
+          <a href="#">aa</a>
+          <a href="#">aa</a>
+          <a href="#">aa</a>
+          <a href="#">aa</a>
+          <a href="#">aa</a>
+        </div>
+        <div class="right">
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>若没有清除浮动则会有环绕效果(此时已清除浮动)</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2.absolute -->
+    <section class="layout absolute">
+      <article class="left-right">
+        <style media="screen">
+          .layout.absolute > article{
+            position: relative;
+          }
+          .layout.absolute > article > div{
+            position: absolute;
+          }
+          .layout.absolute > article > .left{
+            left: 0;
+            width: 200px;
+            background-color: red;
+          }
+          .layout.absolute > article > .right{
+            left: 200px;
+            right: 0;
+            background-color: green;
+          }
+        </style>
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3.flex -->
+    <section class="layout flex" style="margin-top: 300px;">
+      <article class="left-right">
+        <style media="screen">
+          .layout.flex > article{
+            display: flex;
+          }
+          .layout.flex > article > .left{
+            width: 200px;
+            background-color: red;
+          }
+          .layout.flex > article > .right{
+            flex: 1;
+            background-color: green;
+          }
+        </style>
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>使用flex，一侧高度变化时会影响另一侧</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4.table -->
+    <section class="layout table">
+      <article class="left-right">
+        <style media="screen">
+          .layout.table > article{
+            display: table;
+            width: 100%;
+          }
+          .layout.table > article > div{
+            display: table-cell;
+          }
+          .layout.table > article > .left{
+            width: 200px;
+            background-color: red;
+          }
+          .layout.table > article > .right{
+            background-color: green;
+          }
+        </style>
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>使用table，一侧高度变化时会影响另一侧</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5.grid -->
+    <section class="layout grid">
+      <article class="left-right">
+        <style media="screen">
+          .layout.grid > article{
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: 200px auto;
+          }
+          .layout.grid > article > .left{
+            background-color: red;
+          }
+          .layout.grid > article > .right{
+            background-color: green;
+          }
+        </style>
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>内容</p>
+          <p>使用grid,内容会超出</p>
+        </div>
+      </article>
+    </section>
+
+  </body>
+</html>
