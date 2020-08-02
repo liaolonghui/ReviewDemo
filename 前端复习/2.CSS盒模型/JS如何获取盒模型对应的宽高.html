@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #box{
+        width: 200px;
+        height: 200px;
+        border: 5px dashed red;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box">
+      box  (点击我获得我的宽高值)
+    </div>
+
+    <script type="text/javascript">
+
+      //注意：如果使用 box.style.width/height 只能获取到行内样式的宽高
+
+      //如果是使用 box.offsetWidth/Height(c+p+b) box.clientWidth/Height(c+p)
+      //box.scrollWidth/Height(c+) 获取到的宽高则不仅仅只是content的宽高
+
+
+      var box = document.getElementById('box');
+
+      //ie中才有currentStyle(ie8只能用这个)
+      //box.onclick = function(){
+        //let width = box.currentStyle.width;
+        //let height = box.currentStyle.height;
+        //alert("使用currentStyle获取到的宽高为："+width+"与"+height);
+      //}
+
+      box.onclick = function(){
+        if(window.getComputedStyle){
+          var width = window.getComputedStyle(box).width;
+          var height = window.getComputedStyle(box).height;
+          alert("使用window.getComputedStyle()获取到的宽高为："+width+"与"+height);
+        }else{
+          var width = box.currentStyle.width;
+          var height = box.currentStyle.height;
+          alert("使用currentStyle获取到的宽高为："+width+"与"+height);
+        }
+      }
+
+
+      //box.getBoundingClientRect().width/height/left/top有点类似与box.offsetWidth/Height/Left/Top
+      var width = box.getBoundingClientRect().width;
+      var height = box.getBoundingClientRect().height;
+      console.log("使用getBoundingClientRect()获取到的是内容+内边距+边框的宽高");
+      console.log(width,height);
+
+
+    </script>
+
+  </body>
+</html>

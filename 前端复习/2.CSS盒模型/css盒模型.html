@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="IEbox">
+      <style media="screen">
+        .IEbox{
+          width: 200px;
+          height: 200px;
+          padding: 6px;
+          border: 4px solid red;
+          background-color: yellow;
+          box-sizing: border-box;
+        }
+        <h2>IE盒模型</h2>
+      </style>
+    </div>
+
+    <div class="box">
+      <style media="screen">
+        .box{
+          width: 200px;
+          height: 200px;
+          padding: 6px;
+          margin-top: 50px;
+          border: 4px solid red;
+          background-color: yellow;
+          box-sizing: content-box; /* 默认值就是content-box */
+        }
+        <h2>标准盒模型</h2>
+      </style>
+    </div>
+  </body>
+</html>

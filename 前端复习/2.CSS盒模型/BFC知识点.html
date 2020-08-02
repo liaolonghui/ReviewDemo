@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      /* 1 */
+      .box1{
+        width: 100px;
+        background-color: yellow;
+      }
+      .box2{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-color: red;
+      }
+
+      /* 2 */
+      .box3{
+        width: 100px;
+        background-color: yellow;
+        box-sizing: border-box;
+      }
+      .box4{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-color: red;
+      }
+
+      /* 3 */
+      .box5{
+        width: 100px;
+        background-color: yellow;
+        overflow: hidden;
+      }
+      .box6{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-color: red;
+      }
+
+      /* 4 */
+      .box7{
+        width: 100px;
+        background-color: yellow;
+      }
+      .box8{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-color: red;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>若父盒子为content-box(标准盒模型)</h3>
+    <div class="box1">
+      <div class="box2">
+        此时父盒子高100px
+      </div>
+    </div>
+
+    <h3>若父盒子为border-box(IE盒模型)</h3>
+    <div class="box3">
+      <div class="box4">
+        此时父盒子高依旧是100px
+      </div>
+    </div>
+
+    <h3>若父盒子触发BFC</h3>
+    <div class="box5">
+      <div class="box6">
+        此时父盒子高是110px
+      </div>
+    </div>
+
+    <h3>若子盒子触发BFC</h3>
+    <div class="box7">
+      <div class="box8">
+        此时父盒子高是100px
+      </div>
+    </div>
+
+    <hr>
+    <div class="box">
+      <h3>BFC(块级元素格式化上下文)原理：</h3>
+      <p>1.BFC元素不与浮动元素相重叠</p>
+      <p>2.同一BFC元素中的垂直方向的边距会发生重叠</p>
+      <p>3.BFC元素在页面中是独立容器，内外元素互不影响</p>
+      <p>4.计算高度时浮动元素会参与计算</p>
+      <hr>
+      <h3>触发BFC</h3>
+      <p>1.float不为none</p>
+      <p>2.position不为static或者relative（为absolute或fixed）</p>
+      <p>3.display为inline-block,inline-flex,table-cell,table-caption等</p>
+      <p>4.overflow不为visible</p>
+    </div>
+  </body>
+</html>
