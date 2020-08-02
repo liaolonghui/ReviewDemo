@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>创建对象有几种方法？</h3>
+    <p>看控制台(o1和o2属于同一类)</p>
+    <script type="text/javascript">
+      //1
+      var o1 = {name: "wbj"};
+      var o2 = new Object({name: "wbj"});
+
+      //2
+      var M = function(){this.name="wbj"}
+      var o3 = new M();
+
+      //3
+      var p = {name: "wbj"};
+      var o4 = Object.create(p);
+
+      console.log(o1);
+      console.log(o2);
+      console.log(o3);
+      console.log(o4);
+    </script>
+
+    <hr>
+    <h3>原型，构造函数，实例，原型链</h3>
+    <p>__proto__ , prototype ......</p>
+
+    <hr>
+    <h3>instanceof原理</h3>
+    <p>实例对象 instanceof 构造函数</p>
+    <p>instanceof原理是顺着原型链来判断实例对象的__proto__是否指向构造函数的prototype</p>
+    <p>只要是同一条原型链上的prototype都会返回true</p>
+    <br>
+    <p>所以要判断是否是某个构造函数所生成的实例对象的话，要使用constructor进行判断</p>
+    <p>实例对象.__proto__.constructor === 构造函数</p>
+
+    <hr>
+    <h3>new运算符</h3>
+    <p>Object.create()创建一个新对象，新对象的__proto__指向传入的参数对象</p>
+    <script type="text/javascript">
+      var newL = function(fn){
+        var o = Object.create(fn.prototype);
+        var k = fn.call(o);//看传入的构造函数是否有返回对象
+        if(typeof k === 'object'){
+          return k;
+        }else{
+          return o;
+        }
+      }
+    </script>
+
+  </body>
+</html>

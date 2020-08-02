@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>此处主要关注于es5写法</h3>
+    <script type="text/javascript">
+
+      function Parent(){
+        this.name = "继承";
+        this.arr = ['a','b','c'];
+      }
+      Parent.prototype.say = function(){
+        console.log('hi');
+      }
+
+
+      //1.借助构造函数实现继承
+      function Child1(){
+        Parent.call(this);
+        this.type = "child1";
+      }
+      //缺点：不能继承父类原型上的属性和方法
+
+
+      //2.借助原型链实现继承
+      function Child2(){
+        this.type = "child2";
+      }
+      Child2.prototype = new Parent();
+      //缺点：所有由子类生成的实例对象共用同一个原型对象。
+      //改变其中一个子类的实例对象所继承的属性或方法就会使其他子类的实例对象所继承的属性或方法也改变
+
+
+      //3.组合继承
+      function Child3(){
+        Parent.call(this);
+        this.type = "child3";
+      }
+      Child3.prototype = new Parent();
+      //缺点：子类实例化时父类的构造函数执行了两次
+
+
+      //4.组合继承改良1
+      function Child4(){
+        Parent.call(this);
+        this.type = "child4";
+      }
+      Child4.prototype = Parent.prototype;
+      //缺点：1.constructor指向错误(前2种继承方式也有这样的问题)  2.这样的写法使得子类和父类是同一个prototype
+
+
+      //5.组合继承改良2（最终完美版）          constructor    Object.create()
+      function Child5(){
+        Parent.call(this);
+        this.type = "child5";
+      }
+      Child5.prototype = Object.create(Parent.prototype); //让子类的原型对象的__proto__指向父类的原型对象
+      Child5.prototype.constructor = Child5;
+
+      var child1 = new Child5();
+      var child2 = new Child5();
+      console.log("使用es5实现类的完美继承");
+      console.log(child1);
+      child1.arr = [1,2,3];
+      
+      console.log("改变child1，是否会影响child2");
+      console.log(child2);
+
+    </script>
+  </body>
+</html>
