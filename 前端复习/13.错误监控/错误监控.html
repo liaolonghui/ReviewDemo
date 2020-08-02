@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>前端错误的分类（两种：1.即时运行错误 2.资源加载错误）</h2>
+    <h3>即时运行错误（代码错误）</h3>
+    <p>1.使用try...catch</p>
+    <p>2.使用window.onerror</p>
+    <p>注意：onerror不会冒泡</p>
+    <h3>资源加载错误</h3>
+    <p>1.object.onerror给img或者script对象添加onerror事件</p>
+    <p>2.performance.getEntries()获取所有已加载资源，用全部减去已加载资源就可以</p>
+    <p>3.Error事件捕获   window.addEventListener('error',function(e){...},true)</p>
+
+    <hr>
+
+    <h2>上传错误</h2>
+    <p>1.ajax(一般不用这个)</p>
+    <p>2.利用Image对象</p>
+    <p>(new Image()).src = '......';</p>
+  </body>
+</html>
