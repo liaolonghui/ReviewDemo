@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class=""></div>
+
+    <script type="text/javascript">
+      //es5实现方式
+      function Parent1(name,age){
+        this.name = name;
+        this.age = age;
+      }
+      Parent1.prototype.say = function(){
+        console.log('hi');
+      }
+      //子类继承父类
+      function Child1(name,age,job){
+        Parent1.call(this,name,age);
+        this.job = job;
+      }
+      Child1.prototype = new Parent1();//最好使用Object.create(Parent1.prototype);才能实现完美继承
+      Child1.prototype.constructor = Child1;
+
+      let child1 = new Child1('wbj',20,'学生');
+      console.log(child1);
+
+
+
+      //es6实现方式
+      class Parent2{
+        constructor(name,age){
+          this.name = name;
+          this.age = age;
+        }
+        say(){
+          console.log('es6,hi.');
+        }
+      }
+      class Child2 extends Parent2{
+        constructor(name,age,job){
+          super(name,age);
+          this.job = job;
+        }
+      }
+
+      let child2 = new Child2('炫狗',28,'在世真虫');
+      console.log(child2);
+    </script>
+  </body>
+</html>

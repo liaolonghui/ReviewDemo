@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" class="btn">1</button>
+    <button type="button" class="btn">2</button>
+    <button type="button" class="btn">3</button>
+    <button type="button" class="btn">4</button>
+
+    <script type="text/javascript">
+      var btn = document.getElementsByTagName('button');
+      for(var i=0; i<btn.length; i++){
+        (function(i){
+          btn[i].onclick = function(){
+            var j = i+1;
+            alert("你点击的是第"+j+"个按钮");
+          }
+        })(i);
+      }
+
+      //可使用es6中的let定义变量，这样的话就不用再使用闭包实现这个效果了。
+    </script>
+
+  </body>
+</html>
