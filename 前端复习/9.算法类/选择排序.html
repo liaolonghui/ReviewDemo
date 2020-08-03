@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>选择排序</title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+      let selectionSort = (arr)=>{
+        let len = arr.length;
+        let minIndex, temp;
+        for(let i=0; i<=len-1; i++){
+          minIndex = i;
+          for(let j=i+1; j<len; j++){
+            if(arr[j]<arr[minIndex]){
+              //找出最小数
+              minIndex = j;
+            }
+          }
+          temp = arr[i];
+          arr[i] = arr[minIndex];
+          arr[minIndex] = temp;
+        }
+        return arr;
+      };
+
+
+      let arr1 = [55,62,12,22,42,88];
+      console.log(selectionSort(arr1));
+      let arr2 = [1,1,22,21,45,65,85,58,54,55,54,66];
+      console.log(selectionSort(arr2));
+    </script>
+  </body>
+</html>

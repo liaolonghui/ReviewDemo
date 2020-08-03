@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>冒泡排序</title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+      function bubbleSort(arr){
+        let len = arr.length;
+        for(let i=0; i<len-1; i++){   //如果有n个数字则仅仅需要排序出n-1个数字即可，最后一个不用再比较了。
+          for(let j=0; j<len-1-i; j++){   //比较到len-1-i就可以了。
+            if(arr[j] > arr[j+1]){
+              let temp = arr[j];
+              arr[j] = arr[j+1];
+              arr[j+1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+
+      let arr1 = [55,62,12,22,42,88];
+      console.log(bubbleSort(arr1));
+      let arr2 = [1,1,22,21,45,65,85,58,54,55,54,66];
+      console.log(bubbleSort(arr2));
+    </script>
+  </body>
+</html>
