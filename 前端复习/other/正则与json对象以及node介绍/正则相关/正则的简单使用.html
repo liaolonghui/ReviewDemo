@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+
+      //找出a在字符串中首先出现的位置(索引)
+      let str = "sdfhjuliyktrhefqwertyhgbfdssas";
+      console.log(str.indexOf('a'));
+      let re = /a/;
+      console.log(str.search(re));
+
+      //匹配图片的RegExp
+      let imgRe = /\.(png|jpg|gif)$/i;
+      let arr = ["sss.png","xxx.jpg","bbb.ppd","666.gif","zzz.ect"];
+      let imgs = arr.map((item)=>{
+        if(imgRe.test(item)){
+          return item;
+        }
+      });
+      console.log(imgs);
+
+
+      //找出所有的数字
+      let strN = "3etrdg56cbvb8767t5r647rufjg0y9ieudsg";
+      let numRe = /\d/g;
+      console.log(strN.match(numRe));
+      //找出所有由两位数及两位数以上的数字
+      let num2Re = /\d\d+/g;
+      console.log(strN.match(num2Re));
+
+      //补充：/w等价于[a-z0-9_]  /d等价于[0-9]   /s是空白字符         (大写时则相反)
+      //  g是找出所有    i是忽略大小写     m是多行查找
+      //  +是一个或多个      *是0个或多个     ?是0个或一个
+      //   [^0-9]是除了数字0-9以外的字符
+      //   /a$/ 是以a结尾      /^a/ 是以a开头
+      //补充3个字符串方法（用于判断一个字符串中是否包含另一个字符串）：startsWith()   endsWith()    includes()
+
+      //在修饰匹配次数的特殊符号后再加上一个 "?" 号，则可以使匹配次数不定的表达式尽可能少的匹配，
+      //使可匹配可不匹配的表达式，尽可能的 "不匹配"。这种匹配原则叫作 "非贪婪" 模式，也叫作 "勉强"模式。
+
+
+
+      //查找qq号的正则
+      let qqRe = /^[1-9]\d{4,9}$/;
+
+      //检验是否是0-9999  (非为两部分来看，0-9以及10-9999)
+      let re9 = /^(\d|[1-9]\d{1,3})$/;
+
+
+    </script>
+  </body>
+</html>

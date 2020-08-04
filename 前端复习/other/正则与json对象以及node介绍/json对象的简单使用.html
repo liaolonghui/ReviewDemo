@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+      let json = {
+        name: "wbj",
+        age: 20
+      };
+      let jsonStr = JSON.stringify(json);
+      console.log("json转为字符串");
+      console.log(jsonStr);
+
+      console.log("json以及json字符串在转换回json之间的对比");
+      console.log(json);
+      console.log(JSON.parse(jsonStr));
+
+    </script>
+  </body>
+</html>
