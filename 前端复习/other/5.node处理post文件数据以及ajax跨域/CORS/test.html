@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+      let ajax = new XMLHttpRequest();
+      ajax.open("get","http://localhost:8080",true);
+      ajax.send();
+      ajax.onreadystatechange = function(){
+        if(ajax.readyState == 4){
+          if(ajax.status >= 200 && ajax.status < 300 || ajax.status==304){
+            alert("成功");
+            alert(ajax.responseText);
+          }else{
+            alert("失败");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
