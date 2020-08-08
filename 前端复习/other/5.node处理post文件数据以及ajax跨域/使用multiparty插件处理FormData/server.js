@@ -10,7 +10,7 @@ http.createServer((req,res)=>{
   form.on("field",(name,value)=>{
     console.log("字段：",name,value);
   });
-  form.on("file",(name,file,...rest)=>{
+  form.on("file",(name,file)=>{
     console.log("文件：",name,file);
   });
   form.on("close",()=>{
