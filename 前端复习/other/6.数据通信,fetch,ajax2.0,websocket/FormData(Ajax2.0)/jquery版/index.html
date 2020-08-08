@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./jquery.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <form action="/form" method="post">
+      <label for="nm">姓名</label><input id="nm" type="text" name="name"><br>
+      <label for="age">年龄</label><input id="age" type="text" name="age"><br>
+      <input type="submit" value="提交" style="margin-left:30px;margin-top:10px;">
+    </form>
+    <script type="text/javascript">
+      $("form").on("submit",function(){
+        let formdata = new FormData(this);
+        $.ajax({
+          url: this.active,
+          type: this.method,
+          data: formdata,
+          processData: false,  //告诉jquery别处理我的数据
+          contentType: false,  //contentType也别改动
+        }).then(res=>{
+          alert("成功");
+        },err=>{
+          alert("失败");
+        });
+        return false;
+      });
+    </script>
+  </body>
+</html>

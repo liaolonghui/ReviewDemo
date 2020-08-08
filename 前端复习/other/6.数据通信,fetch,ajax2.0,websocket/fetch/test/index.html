@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" id="btn">发送请求</button>
+    <script type="text/javascript">
+      let btn = document.getElementById("btn");
+      btn.onclick = async function(){
+        //1.请求
+        let res = await fetch("/data/1.txt");
+        //2.解析
+        let str = await res.text();  // json数据则使用json()
+        alert(str);
+      }
+    </script>
+  </body>
+</html>

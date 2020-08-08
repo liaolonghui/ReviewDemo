@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="box">
+      <button type="button" id="btn">获取图片</button>
+      <br>
+      <img src="" alt="beauty" id="img1">
+      <script type="text/javascript">
+        window.onload = function(){
+          let btn = document.getElementById("btn");
+          let oImg = document.getElementById("img1");
+          btn.onclick = async function(){
+            let res = await fetch("image/1.jpg");
+            let data = await res.blob();                //blob()
+            let url = URL.createObjectURL(data);
+            oImg.src = url;
+          };
+        };
+      </script>
+    </div>
+  </body>
+</html>

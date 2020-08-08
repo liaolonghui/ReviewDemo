@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class=""></div>
+    <script src="http://localhost:8080/socket.io/socket.io.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      let sock = io.connect('ws://localhost:8080');
+      sock.emit("aaa",12,5);
+      sock.on("timer",time=>{
+        console.log(time);
+      });
+    </script>
+  </body>
+</html>

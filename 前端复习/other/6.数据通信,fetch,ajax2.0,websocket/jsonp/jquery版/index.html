@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class=""></div>
+    <script type="text/javascript">
+
+      $.ajax({
+        url: "/callback",
+        data: {},
+        dataType: "jsonp",
+        jsonp: "cb"
+      }).then((str)=>{
+        alert(str);
+      },(res)=>{
+        alert("失败");
+      });
+
+    </script>
+  </body>
+</html>
