@@ -12,4 +12,8 @@ memcache   redis   (性能高，支持巨大的并发...)
 
 
 ### 管理工具
-如navicat,phpmyadmin,studio 3T等......     
+如navicat,phpmyadmin,studio 3T等......  
+
+
+### 数据库回滚
+数据库的回滚 回滚(Rollback)指的是程序或数据处理错误,将程序或数据恢复到上一次正确状态的行为。回滚包括程序回滚和数据回滚等类型。   
