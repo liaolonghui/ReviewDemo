@@ -1,0 +1,15 @@
+//pug靠缩进定层级
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="site",content="test")
+    title=title
+    script.
+      window.onload=function(){
+        alert("xxxxx");
+      }
+  body
+    ul
+      each user in users
+        li=user.name
